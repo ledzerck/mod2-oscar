@@ -1,0 +1,213 @@
+#header {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+#header img {
+    width: 200%;
+    max-width: 120px;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 20%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc(  (var(--position) - 1) * (360 / var(--quantity)) * 1deg ))
+        translateZ(550px);
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner .content h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16em;
+    line-height: 1em;
+    color: rgb(80, 80, 233);
+    position: relative;
+}
+
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px cornflowerblue;
+    color: transparent;
+}
+
+.banner .content .author {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: bottom;
+    max-width: 200px;
+    position: relative;
+}
+
+.banner .content h2{
+    font-size: 3em;
+}
+
+.banner .content .model {
+    background-image: url(/imgs/ventas-plantas-de-luz.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.contenedor{
+    background-color: rgb(230, 240, 140);
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+}
+
+.direction-row {
+    flex-direction: row
+}
+
+.direction-row-reverse {
+    flex-direction: row-reverse;
+} 
+
+.direction-column {
+    flex-direction: column
+}
+
+.direction-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.caja {
+    border: 3px solid rgb(110, 18, 18);
+    margin: 15px;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+}
+
+/*WRAP*/
+
+.azul {
+    background-color: lightskyblue;
+}
+
+.azul .caja {
+    width: 300px;
+}
+
+.wrap-nowwrap {
+    flex-wrap: nowrap;
+}
+
+.wrap-wrap {
+    flex-wrap: wrap
+}
+
+.wrap-wrap-reverse {
+    flex-wrap: wrap-reverse
+}
+
+/*Justificar Justify Content*/
+
+.naranja {
+    background-color: orange;
+}
+
+.justify-flex-start{
+    justify-content: flex-start;
+}
+
+.justify-flex-center{
+    justify-content: center;
+}
+
+.justify-flex-end{
+    justify-content: end;
+}
+
+.justify-space-between{
+    justify-content: space-between;
+}
+
+.justify-space-around{
+    justify-content: space-around;
+}
+
+/*Alinear Align-Items*/
+
+.morado{
+    background-color: purple;
+    height: 200px;
+}
+
+.align-stretch{
+    align-items: stretch;
+}
+
+.align-flex-start{
+    align-items: flex-start;
+}
+
+.align-flex-end{
+    align-items: end;
+}
+
+.align-cneter{
+    align-items: center;
+}
+
+

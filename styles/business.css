@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+   background-color: rgb(94, 81, 81); 
+   padding: 1rem ;
+}
+
+section {
+    background-color: rgb(64, 85, 182);
+    padding: 1rem;
+    position: right;
+    position: relative;
+}
+
+article {
+    background-color: rgb(25, 194, 194);
+    padding: 2rem;
+    border: 1px solid white;
+    position: relative;
+    display: stretch;
+}
+
+.item-2 {
+    position: sticky;
+    top: 0;
+}
+.transform {
+    background-color: rgb(251, 250, 255);
+    width: 200px;
+    height: 200px;
+    /*transition: all 1s ease-in-out .5s;*/
+    animation: Movimiento 2s ease-in 2s infinite alternate running;
+}
+
+.transform:hover {
+    animation-play-state: running;
+}
+
+@keyframes Movimiento {
+    from {
+        transform: translate(0);
+    }
+
+    33% {
+        transform: translate(0px, 0px);
+    }
+    66% {
+        transform: translate(0, 0);
+        background-color: rgb(245, 242, 248);
+    }
+
+    to {
+        transform: translate(1100px, 0px);
+    }
+}
+
+.image-gallery {
+    margin-top: 2rem;
+    text-align: center;
+    
+}
+
+.image-gallery > div {
+    columns: 3;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+}
+
+.image-gallery img {
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+@media (max-width: 48rem) {
+    .image-gallery > div {
+        columns: 2;
+    }
+}
+
+@media (max-width: 32rem) {
+    .image-gallery > div {
+        columns: 1;
+    }
+}
+
+#header {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+#header img {
+    width: 200%;
+    max-width: 120px;
+}
